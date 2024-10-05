@@ -1,0 +1,41 @@
+Algoritmo EJ1
+	// Declaramos las variables
+	Definir numero_a_adivinar, numero_usuario, intentos_restantes, intentos_realizados Como Entero
+	
+	// Inicializamos las variables
+	numero_a_adivinar <- Azar(100) + 1  // Genera un número aleatorio entre 1 y 100
+	intentos_restantes <- 10
+	intentos_realizados <- 0
+	
+	// Mensaje inicial del juego
+	Escribir "¡Bienvenido al juego de adivinanza de números!"
+	Escribir "He generado un número entre 1 y 100. Tienes 10 intentos para adivinarlo."
+	
+	// Bucle que se ejecutará hasta que se acierten el número o se acaben los intentos
+	Mientras intentos_restantes > 0 Hacer
+		Escribir ""
+		Escribir "Introduce un número: "
+		Leer numero_usuario
+		
+		// Incrementamos los intentos realizados y restamos un intento
+		intentos_realizados <- intentos_realizados + 1
+		intentos_restantes <- intentos_restantes - 1
+		
+		// Comprobamos si el usuario ha adivinado el número
+		Si numero_usuario = numero_a_adivinar Entonces
+			Escribir "¡Felicidades! Has adivinado el número en ", intentos_realizados, " intentos."
+		FinSi
+		
+		// Si no ha acertado, indicamos si el número es mayor o menor
+		Si numero_usuario < numero_a_adivinar Entonces
+			Escribir "El número es mayor. Te quedan ", intentos_restantes, " intentos."
+		SiNo
+			Escribir "El número es menor. Te quedan ", intentos_restantes, " intentos."
+		FinSi
+	FinMientras
+	
+	// Si no ha adivinado y se acabaron los intentos, revelamos el número
+	Si intentos_restantes = 0 Entonces
+		Escribir "Se te han acabado los intentos. El número que debías adivinar era: ", numero_a_adivinar
+	FinSi
+FinAlgoritmo
