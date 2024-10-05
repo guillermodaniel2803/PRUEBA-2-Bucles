@@ -96,3 +96,24 @@ Algoritmo EJ3
 	Escribir 'Números menores que 0: ', menores
 	Escribir 'Números iguales a 0: ', iguales
 FinAlgoritmo
+
+Algoritmo EJ4
+    // Declaramos la variable para almacenar el carácter
+    Definir caracter Como Caracter
+    // Mensaje inicial
+    Escribir "Introduce caracteres uno por uno. El programa termina cuando introduzcas un espacio."
+    // Bucle que se repite hasta que se introduzca un espacio
+    Repetir
+        Escribir "Introduce un carácter: "
+        Leer caracter
+        // Comprobamos si el carácter es una vocal (tanto en mayúsculas como en minúsculas)
+        Si caracter = "a" O caracter = "e" O caracter = "i" O caracter = "o" O caracter = "u"  Entonces
+            Escribir "VOCAL"
+        Sino Si caracter <> "a" O caracter = "e" O caracter = "i" O caracter = "o" O caracter = "u" Entonces
+				Escribir "NO VOCAL"
+			FinSi
+		FinSi
+	Hasta Que caracter = " "	
+		// Mensaje de fin del programa
+		Escribir "Programa finalizado. Has introducido un espacio."
+FinAlgoritmo
